@@ -1,0 +1,279 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "UVector.h"
+#include "UPrincipal.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+CVector *Vec;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{       Vec=new CVector(Form1->Canvas);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	   Vec->Tamaño=StrToInt(ETamaño->Text);
+	   SGVector->ColCount=StrToInt(ETamaño->Text);
+}
+//---------------------------------------------------------------------------
+void TForm1::FormAClase(TStringGrid *SG, CVector *CV)
+{   CV->Tamaño=SG->ColCount;
+	for(int i=0;i<CV->Tamaño;i++)
+	{  CV->Celda[i]=StrToInt(SG->Cells[i][0]);}
+}
+
+void TForm1::ClaseAForm(CVector *CV, TStringGrid *SG)
+{   SG->ColCount=CV->Tamaño;
+	for(int i=0;i<SG->ColCount;i++)
+	{   SG->Cells[i][0]=IntToStr(CV->Celda[i]);}
+}
+void __fastcall TForm1::ContarElementos1Click(TObject *Sender)
+{   FormAClase(SGVector,Vec);
+	EResultado->Text=Vec->ContarElem(StrToInt(EElem->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SumarElementos1Click(TObject *Sender)
+{     FormAClase(SGVector,Vec);
+      EResultado->Text=Vec->SumarElem();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarElem1Click(TObject *Sender)
+{    FormAClase(SGVector,Vec);
+	 Vec->EliminarElem(StrToInt(EPos->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InsertarElemento1Click(TObject *Sender)
+{   FormAClase(SGVector,Vec);
+	Vec->InsertarElem(StrToInt(EPos->Text),StrToInt(EElem->Text));
+    ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Secuencial1Click(TObject *Sender)
+{    FormAClase(SGVector,Vec);
+	 EResultado->Text=Vec->BusquedaSecuencial(StrToInt(EElem->Text));
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Binaria1Click(TObject *Sender)
+{    FormAClase(SGVector,Vec);
+     EResultado->Text=Vec->BusquedaBinaria(StrToInt(EElem->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::LlenarVector1Click(TObject *Sender)
+{
+	 Vec->LlenarVector();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::DibujarVector1Click(TObject *Sender)
+{     FormAClase(SGVector,Vec);
+      Vec->DibujarVector(200,150);
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Intercambio1Click(TObject *Sender)
+{
+	  FormAClase(SGVector, Vec);
+	  Vec->OrdenarIntercambio();
+	  ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Burbuja1Click(TObject *Sender)
+{
+	  FormAClase(SGVector, Vec);
+	  Vec->OrdenarBurbuja();
+	  ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Shell1Click(TObject *Sender)
+{
+      FormAClase(SGVector, Vec);
+	  Vec->OrdenarShell();
+	  ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarElemento1Click(TObject *Sender)
+{    FormAClase(SGVector, Vec);
+	 EResultado->Text=Vec->ContarElemRec(StrToInt(EElem->Text));
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EleminarElemento1Click(TObject *Sender)
+{    FormAClase(SGVector, Vec);
+	 Vec->EliminarElemRec(StrToInt(EPos->Text));
+	 ClaseAForm(Vec,SGVector);
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SumarElementos2Click(TObject *Sender)
+{    FormAClase(SGVector,Vec);
+     EResultado->Text=Vec->SumarElem();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::InsertarElemento2Click(TObject *Sender)
+{    FormAClase(SGVector,Vec);
+	 Vec->InsertarElemRec(StrToInt(EPos->Text),StrToInt(EElem->Text));
+	 ClaseAForm(Vec,SGVector);
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Secuencial2Click(TObject *Sender)
+{    FormAClase(SGVector, Vec);
+	 EResultado->Text= Vec->BusquedaSecuencialRec(StrToInt(EElem->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Binaria2Click(TObject *Sender)
+{    FormAClase(SGVector, Vec);
+	 EResultado->Text= Vec->BusquedaBinariaRec(StrToInt(EElem->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::QuickSort1Click(TObject *Sender)
+{    FormAClase(SGVector, Vec);
+	 Vec->OrdenarQuickSort();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::intercalarPareseImpares1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->IntercalarParesImpares();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->Examen1(StrToInt(EElem->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 EResultado->Text=Vec->Examen2();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Practico2Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->EliminarPrimos();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::VoltearlosElementosdelVectos1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->VolterElem_Vec();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ElementoMayor1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 EResultado->Text=Vec->Elem_Mayor();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ElementoRepit1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 EResultado->Text=Vec->Elem_mas_rep();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Eliminarmultiplodenum1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->Elim_ElemMultiplo(StrToInt(EElem->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::IntercalarPareseImpares2Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->Intercalar_Par_Impar();
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EstaOrdenado1Click(TObject *Sender)
+{
+    FormAClase(SGVector, Vec);
+	if(Vec->Esta_Ordenado()){
+		EResultado->Text="Esta Ordenado";
+	}else{
+        EResultado->Text="No esta Ordenado";
+    }
+	ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Reemplazar1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->Reemplazo(StrToInt(EElem->Text), StrToInt(EElem2->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarElemRepit1Click(TObject *Sender)
+{
+	 FormAClase(SGVector, Vec);
+	 Vec->Elim_Elem_Repit(StrToInt(EElem->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarDentrodelRango1Click(TObject *Sender)
+{
+
+	 FormAClase(SGVector, Vec);
+	 Vec->Elim_Dentro_Rango(StrToInt(Pos1->Text), StrToInt(Pos2->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+     FormAClase(SGVector, Vec);
+	 Vec->ElimElemQueNoInicienEnNum(StrToInt(EElem->Text));
+	 ClaseAForm(Vec,SGVector);
+}
+//---------------------------------------------------------------------------
+

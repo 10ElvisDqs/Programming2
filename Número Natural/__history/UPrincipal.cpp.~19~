@@ -1,0 +1,104 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+#include "UNumeroNatural.h"
+#include "UPrincipal.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+CNumeroNatural *NN;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{    NN = new CNumeroNatural;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	EResultado->Text=NN->GetN();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	NN->SetN(StrToInt(ENumero->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	 EResultado->Text=NN->ContarDigito();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+   NN->EliminarDigito(StrToInt(EPos->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+	 EResultado->Text=NN->Factorial();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	 NN->EliminarDigPares();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button7Click(TObject *Sender)
+{
+	  NN->InsertarDigPos(StrToInt(EPos->Text),StrToInt(EDig->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button8Click(TObject *Sender)
+{
+	NN->Voltear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button9Click(TObject *Sender)
+{
+	  EResultado->Text=NN->DevolverDigPos(StrToInt(EPos->Text));
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button10Click(TObject *Sender)
+{
+	 NN->IntercambiarDigPos(StrToInt(EPos1->Text),StrToInt(EPos2->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button11Click(TObject *Sender)
+{
+	  EResultado->Text=NN->DevolverNumRango(StrToInt(EPos1->Text),StrToInt(EPos2->Text));
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Factorial1Click(TObject *Sender)
+{
+	  EResultado->Text=NN->FactorialN();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarDigitosPares1Click(TObject *Sender)
+{
+	   EResultado->Text=NN->Contar_Dig_Pares();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::EliminarDigImpares1Click(TObject *Sender)
+{
+
+	   NN->Elim_Dig_Impares();
+       EResultado->Text=NN->GetN();
+}
+//---------------------------------------------------------------------------
+

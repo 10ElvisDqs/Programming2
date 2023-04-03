@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/08/04 23:06:48.000.591,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020/08/04 23:06:48.000.623,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/09/29 07:33:21.000.299,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2022/09/29 07:33:21.000.335,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/09/29 07:34:16.000.746,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2022/09/29 08:24:47.000.213,E:\Daniel\2022\2-2022\Número Natural\UNumeroNatural.cpp=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2022/09/29 08:24:47.000.213,E:\Daniel\2022\2-2022\Número Natural\UNumeroNatural.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
+    <Transaction>2022/09/29 08:25:13.000.385,E:\Daniel\2022\2-2022\Número Natural\UPrincipal.dfm=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/29 08:25:13.000.385,E:\Daniel\2022\2-2022\Número Natural\UPrincipal.cpp=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/09/29 08:25:13.000.385,E:\Daniel\2022\2-2022\Número Natural\UPrincipal.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2022/09/29 08:25:41.000.269,E:\Daniel\2022\2-2022\Número Natural\PNN.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2022/09/29 08:26:01.000.698,E:\Daniel\2022\2-2022\Número Natural\PNumeroNatural.cbproj=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,263 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "UNumeroNatural.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#include <vcl.h>
+
+CNumeroNatural::CNumeroNatural()
+{  n=0;}
+
+unsigned long CNumeroNatural::GetN()
+{  return n;}
+
+void CNumeroNatural::SetN(unsigned long valor)
+{  n=valor;}
+
+unsigned short CNumeroNatural::ContarDigito()
+{  unsigned long aux=n;
+
+   unsigned short c=0;
+   while(aux>0)
+   {  aux=aux/10;
+	  ShowMessage("das");
+	  ShowMessage(c);
+	  c++;
+   }
+   ShowMessage(c);
+   return c;
+}
+
+void CNumeroNatural::EliminarDigito(unsigned short pos)
+{   unsigned long aux=0,p=1;
+	unsigned short d,c=0;
+	while(n>0)
+	{  d=n%10;
+	   n=n/10;
+	   c++;
+	   if(c!=pos)
+	   {  aux=d*p+aux;
+		  p=p*10;
+	   }
+	}
+	n=aux;
+}
+
+unsigned long CNumeroNatural::Factorial()
+{   unsigned long c=0,f=1;
+	while(c<n)
+	{  c++;
+	   f=f*c;
+	}
+    return f;
+}
+
+void CNumeroNatural::EliminarDigPares()
+{  unsigned long aux=0, p=1;
+   unsigned short d;
+   while (n>0)
+   {  d=n%10;
+	  n=n/10;
+	  if(d%2==1)
+	  {  aux=d*p+aux;
+		 p=p*10;
+	  }
+   }
+   n=aux;
+}
+
+void CNumeroNatural::InsertarDigPos(unsigned short pos, unsigned short dig)
+{  unsigned long aux=0, p=1;
+   unsigned short c=0, d;
+   while(n>0)
+   {  d=n%10;
+	  n=n/10;
+	  c++;
+	  if(c==pos)
+	  {  aux=dig*p+aux;
+		 p=p*10;
+	  }
+	  aux=d*p+aux;
+	  p=p*10;
+   }
+   n=aux;
+}
+
+void CNumeroNatural::Voltear()
+{   unsigned long aux=0;
+	unsigned short d;
+	while(n>0)
+	{   d=n%10;
+		n=n/10;
+		aux=aux*10+d;
+	}
+	n=aux;
+}
+
+unsigned short CNumeroNatural::DevolverDigPos(unsigned short pos)
+{   unsigned long aux=n;
+	unsigned short d, c=0;
+	while (aux>0 && c!=pos)
+	{  c++;
+	   d=aux%10;
+	   aux=aux/10;
+	}
+	if(c==pos)
+	{ return d;}
+}
+
+void CNumeroNatural::EliminarRango(unsigned short pos1, unsigned short pos2)
+{   unsigned long aux=0, p=1;
+	unsigned short d, c=0;
+	while(n>0)
+	{    d=n%10;
+		 n=n/10;
+		 c++;
+		 if(c<pos1 && c>pos2)
+		 { aux=d*p+aux;
+		   p=p*10;
+		 }
+	}
+	n=aux;
+}
+
+void CNumeroNatural::IntercambiarDigPos(unsigned short pos1, unsigned short pos2)
+{   unsigned short d1=DevolverDigPos(pos1), d2=DevolverDigPos(pos2),d,c=0;
+	unsigned long aux=0, p=1;
+	while(n>0)
+	{  d=n%10;
+	   n=n/10;
+	   c++;
+	   if(c==pos1)
+	   {  aux=d2*p+aux;}
+	   else if(c==pos2)
+	   {  aux=d1*p+aux;}
+	   else
+	   {  aux=d*p+aux;}
+	   p=p*10;
+	}
+	n=aux;
+}
+
+unsigned long CNumeroNatural::DevolverNumRango(unsigned short pos1, unsigned short pos2)
+{    unsigned long aux=n, num=0, p=1;
+	 unsigned short d, c=0;
+	 while(aux>0)
+	 {  d=aux%10;
+		aux=aux/10;
+		c++;
+		if(c>=pos1 && c<=pos2)
+		{  num=d*p+num;
+		   p=p*10;
+		}
+	 }
+     return num;
+}
+
+/*-------------------- P r a c t i c o --------------------*/
+
+unsigned long CNumeroNatural::FactorialN()  /*1*/
+{   unsigned long c=0,f=1;
+	while(c<n)
+	{  c++;
+	   f=f*c;
+	}
+	return f;
+}
+unsigned long CNumeroNatural::Contar_Dig_Pares(){  /*2*/
+
+	unsigned long aux=n;
+	unsigned long contador_pares=0;
+	unsigned short d=0;
+	while(aux>0){
+	d=aux%10;
+	aux=aux/10;
+
+		if(d%2 == 0){
+		 contador_pares++;
+		}
+
+	}
+	return contador_pares;
+
+}
+void CNumeroNatural::Elim_Dig_Impares(){
+	unsigned long aux=0, p=1;
+   unsigned short d;
+   while (n>0)
+   {  d=n%10;
+	  n=n/10;
+	  if(d%2==0)
+	  {  aux=d*p+aux;
+		 p=p*10;
+	  }else{
+		  //si no es par no se cargan los valores
+	  }
+   }
+   n=aux;
+}
+bool CNumeroNatural::esPrimo(int num) {
+	if (num < 2) return false;
+	if (num == 2 || num == 3) return true;
+	if (num % 2 == 0 || num % 3 == 0) return false;
+	for (int i = 5; i * i <= num; i += 6)
+		if (num % i == 0 || num % (i + 2) == 0)
+			return false;
+	return true;
+}
+
+int CNumeroNatural::Sumar_Dig_Primos(){
+   unsigned long aux=n;
+   unsigned short d;
+   unsigned long suma_primos=0;
+   while (aux>0)
+   {  d=aux%10;
+	  aux=aux/10;
+	  if(esPrimo(d))
+	  {
+		ShowMessage(d);
+		suma_primos=suma_primos+d;
+	  }else{
+		  //si no es primo no ase nada
+	  }
+   }
+
+   return suma_primos;
+}
+unsigned long CNumeroNatural::Dig_Mayor(){         /*5*/
+   unsigned long aux=n;
+   unsigned short d;
+   unsigned long dig_mayor=0;
+   while (aux>0)
+   {  d=aux%10;
+	  aux=aux/10;
+
+	  if(d>dig_mayor)
+	  {
+		dig_mayor=d;;
+	  }else{
+
+	  }
+   }
+
+   return dig_mayor;
+}
+bool CNumeroNatural::Verificar(unsigned long num){
+   unsigned long aux=n;
+   unsigned short d;
+   bool encontro=false;
+
+   while(aux>0 && encontro!=true){
+	  d=aux%10;
+	  aux=aux/10;
+
+	  if(d == num)
+	  {
+		ShowMessage(d+"=="+num);
+		encontro=true;
+	  }
+   }
+   return encontro;
+}

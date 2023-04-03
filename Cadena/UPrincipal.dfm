@@ -1,0 +1,224 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 405
+  ClientWidth = 484
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = b
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 48
+    Top = 32
+    Width = 43
+    Height = 13
+    Caption = 'Cadena1'
+  end
+  object Label2: TLabel
+    Left = 48
+    Top = 165
+    Width = 48
+    Height = 13
+    Caption = 'Resultado'
+  end
+  object Label3: TLabel
+    Left = 48
+    Top = 106
+    Width = 38
+    Height = 13
+    Caption = 'Posici'#243'n'
+  end
+  object Label4: TLabel
+    Left = 144
+    Top = 106
+    Width = 42
+    Height = 13
+    Caption = 'Caracter'
+  end
+  object Label5: TLabel
+    Left = 256
+    Top = 106
+    Width = 77
+    Height = 13
+    Caption = 'Posici'#243'n Palabra'
+  end
+  object Label6: TLabel
+    Left = 355
+    Top = 106
+    Width = 36
+    Height = 13
+    Caption = 'Palabra'
+  end
+  object Label7: TLabel
+    Left = 248
+    Top = 224
+    Width = 55
+    Height = 13
+    Caption = 'SubCadena'
+  end
+  object ECad1: TEdit
+    Left = 48
+    Top = 48
+    Width = 329
+    Height = 21
+    TabOrder = 0
+  end
+  object EResultado: TEdit
+    Left = 48
+    Top = 184
+    Width = 329
+    Height = 21
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 48
+    Top = 75
+    Width = 75
+    Height = 25
+    Caption = 'Set Texto'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 129
+    Top = 75
+    Width = 75
+    Height = 25
+    Caption = 'Get Texto'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object EPos: TEdit
+    Left = 48
+    Top = 125
+    Width = 65
+    Height = 21
+    TabOrder = 4
+  end
+  object ECar: TEdit
+    Left = 144
+    Top = 120
+    Width = 73
+    Height = 21
+    TabOrder = 5
+  end
+  object EPosPal: TEdit
+    Left = 256
+    Top = 120
+    Width = 77
+    Height = 21
+    TabOrder = 6
+  end
+  object EPal: TEdit
+    Left = 355
+    Top = 120
+    Width = 86
+    Height = 21
+    TabOrder = 7
+  end
+  object Ed_SubCadena: TEdit
+    Left = 248
+    Top = 248
+    Width = 121
+    Height = 21
+    TabOrder = 8
+  end
+  object Button3: TButton
+    Left = 112
+    Top = 248
+    Width = 75
+    Height = 25
+    Caption = 'Examen1'
+    TabOrder = 9
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 111
+    Top = 279
+    Width = 75
+    Height = 25
+    Caption = 'Button4'
+    TabOrder = 10
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 112
+    Top = 328
+    Width = 75
+    Height = 25
+    Caption = 'Button5'
+    TabOrder = 11
+    OnClick = Button5Click
+  end
+  object b: TMainMenu
+    Left = 64
+    Top = 224
+    object Procedimientos1: TMenuItem
+      Caption = 'Procedimientos'
+      object Conversiones1: TMenuItem
+        Caption = 'Conversiones'
+        object AMinscula1: TMenuItem
+          Caption = 'A Min'#250'scula'
+          OnClick = AMinscula1Click
+        end
+        object AMayscula1: TMenuItem
+          Caption = 'A May'#250'scula'
+          OnClick = AMayscula1Click
+        end
+        object odoMayscula1: TMenuItem
+          Caption = 'Todo May'#250'scula'
+          OnClick = odoMayscula1Click
+        end
+        object odoMinscula1: TMenuItem
+          Caption = 'Todo Min'#250'scula'
+          OnClick = odoMinscula1Click
+        end
+        object iipoInverso1: TMenuItem
+          Caption = 'Tiipo Inverso'
+          OnClick = iipoInverso1Click
+        end
+        object ipoTitulo1: TMenuItem
+          Caption = 'Tipo Titulo'
+          OnClick = ipoTitulo1Click
+        end
+        object LetraaMayscula1: TMenuItem
+          Caption = 'Letra a May'#250'scula'
+          OnClick = LetraaMayscula1Click
+        end
+      end
+      object Eliminar1: TMenuItem
+        Caption = 'Eliminar'
+        object CaracterIgual1: TMenuItem
+          Caption = 'Caracter Igual'
+          OnClick = CaracterIgual1Click
+        end
+        object CaracterIgual11: TMenuItem
+          Caption = 'Caracter Igual1'
+          OnClick = CaracterIgual11Click
+        end
+      end
+      object ReemplazarPalabra1: TMenuItem
+        Caption = 'Reemplazar Palabra'
+        OnClick = ReemplazarPalabra1Click
+      end
+    end
+    object Funciones1: TMenuItem
+      Caption = 'Funciones'
+      object ContarPalabra1: TMenuItem
+        Caption = 'Contar Palabra'
+        OnClick = ContarPalabra1Click
+      end
+      object Devolverpalabraposicin1: TMenuItem
+        Caption = 'Devolver palabra posici'#243'n'
+        OnClick = Devolverpalabraposicin1Click
+      end
+    end
+  end
+end

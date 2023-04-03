@@ -1,0 +1,73 @@
+//---------------------------------------------------------------------------
+
+#ifndef UVectorH
+#define UVectorH
+//---------------------------------------------------------------------------
+const max=100;
+class CVector
+{  private:
+	  int n;
+	  int V[max];
+	  int GetN();
+	  TCanvas *Lienzo;
+	  int X,Y;
+	  void SetN(int valor);
+	  int GetElem(int pos);
+	  void SetElem(int pos, int elem);
+	  int ContElemRec(int elem, int i);
+	  void ElimElemRec(int pos, int i);
+	  int SumElemRec(int i);
+	  void InsElemRec(int pos, int elem, int i);
+	  int BusSecRec(int elem, int i);
+	  int BusBinRec(int elem, int ini, int fin);
+	  void OrdQuickSort(int ini, int fin);
+   public:
+	  CVector(TCanvas *L);
+      CVector();
+	  __property int Tamaño={ read=GetN, write=SetN};
+	  __property int Celda[int pos]={ read=GetElem, write=SetElem};
+	  int ContarElem(int elem);
+	  int ContarElemRec(int elem);
+	  int SumarElem();
+	  int SumarElemRec();
+	  void EliminarElem(int pos);
+	  void EliminarElemRec(int pos);
+	  void InsertarElem(int pos, int elem);
+	  void InsertarElemRec(int pos, int elem);
+	  int BusquedaSecuencial(int elem);
+	  int BusquedaSecuencialRec(int elem);
+	  int BusquedaBinaria(int elem);
+	  int BusquedaBinariaRec(int elem);
+	  void LlenarVector();
+	  void DibujarLinea(int x, int y, int elem);
+	  void DibujarVector(int x, int y);
+	  void Intercambio(int pos1, int pos2);
+	  void OrdenarIntercambio();
+	  void OrdenarBurbuja();
+	  void OrdenarShell();
+	  void OrdenarQuickSort();
+	  //examen 1
+	  void IntercalarParesImpares();
+	  void eliElemSumDigIngSumDigElem();
+
+	  void Examen1(int num);
+	  int Examen2();
+	  //-------------------- P r a c t i c o --------------------//
+
+	  void EliminarPrimos();                     /*3*/
+	  double raiz_cuadrada(int num);
+	  void VolterElem_Vec();                     /*4*/
+	  int Elem_Mayor();                          /*5*/
+	  int Elem_mas_rep();                        /*6*/
+	  void Par_Izq_Imp_Der();                    /*7*/
+	  void Elim_ElemMultiplo(int num);           /*8*/
+	  void Intercalar_Par_Impar();               /*9*/
+	  bool Esta_Ordenado();                      /*10*/
+	  void Reemplazo(int elem1,int elem2);       /*11*/
+	  void Elim_Elem_Repit(int elem);            /*12*/
+	  void Elim_Dentro_Rango(int pos1,int pos2); /*13*/
+
+
+};
+
+#endif

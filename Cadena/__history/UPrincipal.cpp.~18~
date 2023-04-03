@@ -1,0 +1,104 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UPrincipal.h"
+#include "UCadena.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+CCadena *Cad1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{    Cad1=new CCadena;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	 Cad1->Texto=ECad1->Text;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	 EResultado->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::AMinscula1Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	Cad1->AMinuscula(StrToInt(EPos->Text));
+	ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::AMayscula1Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	Cad1->AMayuscula(StrToInt(EPos->Text));
+	ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::odoMayscula1Click(TObject *Sender)
+{    Cad1->Texto=ECad1->Text;
+	 Cad1->TodoMayuscula();
+	 ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::odoMinscula1Click(TObject *Sender)
+{    Cad1->Texto=ECad1->Text;
+	 Cad1->TodoMinuscula();
+	 ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::iipoInverso1Click(TObject *Sender)
+{    Cad1->Texto=ECad1->Text;
+	 Cad1->TipoInverso();
+	 ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ContarPalabra1Click(TObject *Sender)
+{    Cad1->Texto=ECad1->Text;
+     EResultado->Text=Cad1->ContarPalabras();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ipoTitulo1Click(TObject *Sender)
+{    Cad1->Texto=ECad1->Text;
+	 Cad1->TipoTitulo();
+	 ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::LetraaMayscula1Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	Cad1->LetraAMayuscula(ECar->Text[1]);
+	ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CaracterIgual1Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	Cad1->EliminarCaracter(ECar->Text[1]);
+	ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::CaracterIgual11Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	Cad1->EliminarCaracter1(ECar->Text[1]);
+	ECad1->Text=Cad1->Texto;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Devolverpalabraposicin1Click(TObject *Sender)
+{   Cad1->Texto=ECad1->Text;
+	EResultado->Text=Cad1->Palabras[StrToInt(EPosPal->Text)];
+
+}
+//---------------------------------------------------------------------------
+

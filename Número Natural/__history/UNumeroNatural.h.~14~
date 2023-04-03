@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#ifndef UNumeroNaturalH
+#define UNumeroNaturalH
+//---------------------------------------------------------------------------
+class CNumeroNatural
+{ private:
+	  unsigned long n;
+  public:
+	  CNumeroNatural();
+	  unsigned long GetN();
+	  void SetN(unsigned long valor);
+	  unsigned short ContarDigito();
+	  void EliminarDigito(unsigned short pos);
+	  unsigned long Factorial();
+	  void EliminarDigPares();
+	  void InsertarDigPos(unsigned short pos, unsigned short dig);
+	  void Voltear();
+	  unsigned short DevolverDigPos(unsigned short pos);
+	  void EliminarRango(unsigned short pos1, unsigned short pos2);
+	  void IntercambiarDigPos(unsigned short pos1, unsigned short pos2);
+	  unsigned long DevolverNumRango(unsigned short pos1, unsigned short pos2);
+	  /*-------------------- P r a c t i c o --------------------*/
+	  unsigned long FactorialN();        /*1*/
+	  unsigned long Contar_Dig_Pares();  /*2*/
+	  void Elim_Dig_Impares();           /*3*/
+
+
+
+
+};
+
+
+
+#endif

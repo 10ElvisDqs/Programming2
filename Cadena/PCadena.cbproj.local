@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/08/04 23:06:48.000.591,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2020/08/04 23:06:48.000.623,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/06/23 08:30:34.000.169,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2022/06/23 08:30:34.000.457,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/06/23 08:31:41.000.453,=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2022/06/23 09:27:09.000.561,E:\Daniel\2022\1-2022\INF210\Cadena\UCadena.cpp=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>2022/06/23 09:27:09.000.561,E:\Daniel\2022\1-2022\INF210\Cadena\UCadena.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit2.h</Transaction>
+    <Transaction>2022/06/23 09:27:18.000.277,E:\Daniel\2022\1-2022\INF210\Cadena\UPrincipal.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2022/06/23 09:27:18.000.277,E:\Daniel\2022\1-2022\INF210\Cadena\UPrincipal.cpp=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2022/06/23 09:27:18.000.277,E:\Daniel\2022\1-2022\INF210\Cadena\UPrincipal.dfm=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/06/23 09:27:27.000.422,E:\Daniel\2022\1-2022\INF210\Cadena\PCad.h=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2022/06/23 09:27:33.000.813,E:\Daniel\2022\1-2022\INF210\Cadena\PCadena.cbproj=C:\Users\Gabriel\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
